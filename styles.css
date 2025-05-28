@@ -1,54 +1,54 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
 body {
-    margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: rgb(248, 245, 245);
     color: black;
-
 }
 
-  /* Header */
+/* Header */
 .header {
     background: #fff;
     padding: 1rem 2rem;
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    align-items:stretch;
+    align-items: stretch;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     font-weight: 600;
-
 }
 
+/* Logo */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #047857;
     height: 40px;
-    width: auto;
     display: flex;
     align-items: center;
 }
-    
+
 .logo img {
-    max-width: 50px; /* Set the maximum width for the logo image */
-    margin-right: 10px; /* Space between the image and text */
+    max-width: 50px;
+    margin-right: 10px;
 }
 
 .logo a {
-    font-size: 24px; /* Font size for the name */
-    color: #047857; /* Text color */
-    text-decoration: none; /* Remove underline */
-}
-    
-.logo a:hover {
-  color: #007BFF; /* Color on hover */
+    font-size: 24px;
+    color: #047857;
+    text-decoration: none;
 }
 
+.logo a:hover {
+    color: #007BFF;
+}
+
+/* Navigation */
 .nav a {
     margin-right: 1.5rem;
     text-decoration: none;
@@ -56,6 +56,7 @@ body {
     font-weight: 500;
 }
 
+/* Consult Button */
 .consult-btn {
     background: black;
     color: white;
@@ -65,10 +66,13 @@ body {
     cursor: pointer;
 }
 
-  /* Hero Section */
+.consult-btn:hover {
+    background: #333;
+}
+
+/* Hero Section */
 .hero {
     background: #fff;
-    margin: 0;
     padding: 3rem;
     display: flex;
     justify-content: space-between;
@@ -78,6 +82,12 @@ body {
 
 .hero-text {
     max-width: 50%;
+}
+
+.hero-image img {
+    width: 710px;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .tagline {
@@ -116,10 +126,19 @@ h1 {
 }
 
 .badges {
-    margin-top: 1.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 40px;
+    justify-content: flex;
+}
+
+.store-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 40px;
+    justify-content: center;
 }
 
 .badges span {
@@ -129,18 +148,22 @@ h1 {
     font-size: 0.9rem;
 }
 
-  /* Hero Image */
-.hero-image img {
-    width: 710px;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.store-badge {
+    width: 160px;
+    height: auto;
+    transition: transform 0.2s ease;
 }
 
+.store-badge:hover {
+    transform: translateY(-5px);
+}
+
+/* Sections */
 section {
     background-color: transparent;
     padding: 3rem 2rem;
     margin: 0 auto;
-}  
+}
 
 section h2 {
     font-size: 2rem;
@@ -156,39 +179,176 @@ section p {
     max-width: 800px;
 }
 
+/* About */
+.about {
+    display: flex;
+}
 
+.about-section-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 15px;
+}
+
+.about-image-container img {
+    max-width: 100%;
+    width: 450px;
+    height: auto;
+    border-radius: 10%;
+}
+
+.about-text-content {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
     .about-section-container {
-        display: flex; /* Makes the children (image and text) flex items */
-        align-items: center; /* Vertically centers the image and text */
-        justify-content: flex-start; /* Aligns items to the start (left) of the container */
-        gap: 20px; /* Adds space between the image and text */
-        padding: 20px; /* Example padding for the section */
+        flex-direction: column;
+        text-align: center;
     }
-    
-    .about-image-container img {
-        max-width: 100%; /* Ensures the image is responsive */
-        height: auto; /* Maintains aspect ratio */
-        /* You might want to set a specific width or max-width here for the image */
-        width: 250px; /* Example: set a fixed width */
-        /* or */
-        max-width: 30%; /* Example: image takes up a maximum of 30% of the container width */
-    }
-    
-    .about-text-content {
-        flex: 1; /* Allows the text content to take up available space */
-        /* Add any specific styling for your text here */
-    }
-    
-    /* Optional: Media queries for responsiveness */
-    @media (max-width: 768px) {
-        .about-section-container {
-            flex-direction: column; /* Stacks items vertically on smaller screens */
-            text-align: center; /* Centers text when stacked */
-        }
-    }
+}
 
+/* Info Sections */
+.tax-disputes,
+.international,
+.fees {
+    padding: 4rem 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tax-disputes ul,
+.international ul,
+.fees ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tax-disputes ul li,
+.international ul li,
+.fees ul li {
+    background-color: #e0f2f1;
+    color: #047857;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    border: 1px solid #a7d9d7;
+}
+
+.tax-disputes ul li strong,
+.international ul li strong,
+.fees ul li strong {
+    color: #00563f;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #f9fafb;
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #047857;
+}
+
+.contact-section p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #047857;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.2);
+}
+
+.contact-form button {
+    padding: 0.8rem 1.5rem;
+    background-color: #047857;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #03543f;
+}
+
+
+/* Cards */
+.card {
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    background-color: #f0f0f0;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.card-container .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #227744;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #fff;
+}
+
+/* Footer */
 .site-footer {
-    background-color: #0e0e0e;
+    background-color: #047857;
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
     padding-top: 2rem;
@@ -198,7 +358,6 @@ section p {
     text-align: center;
     background-color: #227744;
     padding: 2rem 1rem;
-    color: white;
 }
 
 .footer-top h3 {
@@ -266,51 +425,17 @@ section p {
     color: #4CAF50;
 }
 
+/* General */
 .container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    
-}
-
-.card {
-    background: white;
-    border-radius: 50px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 20px;
-    width: 300px;
-    transition: transform 0.2s;
-    background-color: #f0f0f0;
-    overflow: hidden;
-
-}
-.card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
-.card-container .btn{
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #227744;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 16px;
-    color: #fff;
-}
-
-.card:hover {
-    transform: scale(1.05);
 }
 
 h2 {
-    color: #333;
+    color: #227744;
 }
 
 p {
-    color: #667;
+    color: rgb(7, 7, 12);
 }
-
-
